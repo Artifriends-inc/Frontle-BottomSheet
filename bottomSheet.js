@@ -5,9 +5,9 @@ import {BottomSheetManager} from "./bottomSheetManager.js";
 export class BottomSheet {
     sheetManager = null;
     sheetId = null;
+    handler = null;
 
     // required options
-    handler = null;
     html = ``;
 
     // status
@@ -27,13 +27,12 @@ export class BottomSheet {
     start = () => {};
     end = () => {};
 
-    constructor(handler, html) {
-        if(handler === null) throw 'handler must be entered';
+    constructor(html) {
         if(html === null) throw 'html must be entered';
 
-        this.handler = handler;
         this.html = html;
 
+        this.handler = document.querySelector('.rootPage').id;
         this.sheetManager = BottomSheetManager.getInstance(this.handler);
     }
 

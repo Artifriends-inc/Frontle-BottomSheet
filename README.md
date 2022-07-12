@@ -2,25 +2,27 @@
 
 BottomSheet UI in Frontle
 
-
-
  [![NPM Version][npm-version-image]][npm-url]
 
  [![NPM Install Size][npm-install-size-image]][npm-install-size-url]
 
  [![NPM Downloads][npm-downloads-image]][npm-downloads-url]
 
-```javascript
-<style>
-  .testBottomSheetContents{
-      font-size: 16px;
-  }
-  .testBottomSheetContents1{
-      color: black;
-  }
-</style>
+![화면-기록-2022-07-12-오후-5.15.45](https://user-images.githubusercontent.com/49587288/178443655-a3cb7cde-4502-4a4d-b11c-a6eb44d4fddb.gif)
 
-let bottomSheet = new BottomSheet(this.handler, `
+```javascript
+// at css file
+.testBottomSheetContents{
+    font-size: 16px;
+}
+.testBottomSheetContents1{
+    color: black;
+}
+
+// at js file
+import {BottomSheet} from "../../frontle/browser_modules/frontle-bottomsheet/bottomSheet.js";
+
+let bottomSheet = new BottomSheet(`
     <div>this is a bottomSheet<div>
 `);
 bottomSheet.sheetContentsClass = 'testBottomSheetContents testBottomSheetContents1';
@@ -34,23 +36,23 @@ bottomSheet.open();
 
 ## Installation
 
-Installation is done using the
+**How to install from Frontle**
 
 ```shell
-$ frontle install-original frontle-bottomsheet
+$ frontle install frontle-bottomsheet
 ```
 
 
 
 ## Function
 
-#### new bottomSheet(handler, html)
+#### new bottomSheet(html)
 
 Create a bottom sheet object
 
 ```javascript
-let bottomSheet = new BottomSheet(this.handler, `
-    <div>this is a bottom sheet<div>
+let bottomSheet = new BottomSheet(`
+    <div>this is a bottomSheet<div>
 `);
 ```
 
@@ -61,9 +63,9 @@ let bottomSheet = new BottomSheet(this.handler, `
 Set the css class of a bottom sheet
 
 ```javascript
-bottomSheet.sheetClass = 'classname';
-bottomSheet.sheetContentsClass = 'classname';
-bottomSheet.sheetBackgroundClass = 'classname';
+bottomSheet.sheetClass = 'css_class_name';
+bottomSheet.sheetContentsClass = 'css_class_name';
+bottomSheet.sheetBackgroundClass = 'css_class_name';
 ```
 
 
@@ -100,7 +102,7 @@ bottomSheet.backgroundClickExit = 'true';
 
 #### bottomSheet.awake
 
-Lifecycle running before the bottom sheet is rendered
+This lifecycle runs before modal rendering.
 
 ```javascript
 bottomSheet.awake () => { console.log('before rendering') }
@@ -110,7 +112,7 @@ bottomSheet.awake () => { console.log('before rendering') }
 
 #### bottomSheet.start
 
-Lifecycle that runs after the bottom sheet is rendered
+This lifecycle runs after modal rendered
 
 ```javascript
 bottomSheet.start () => { console.log('after rendering') }
@@ -120,7 +122,7 @@ bottomSheet.start () => { console.log('after rendering') }
 
 #### bottomSheet.end
 
-Lifecycle running before bottom sheet termination
+This lifecycle runs before modal termination
 
 ```javascript
 bottomSheet.end () => { console.log('end') }

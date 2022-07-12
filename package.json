@@ -1,7 +1,7 @@
 {
   "name": "frontle-bottomsheet",
-  "version": "1.0.0",
-  "description": "Frontle BottomSheet",
+  "version": "1.0.1",
+  "description": "BottomSheet UI in Frontle",
   "keywords": [
     "frontle",
     "frontle-bottomsheet",
@@ -17,7 +17,7 @@
     "electron",
     "chrome extension"
   ],
-  "author": "Yoon HyungJun <y37653@gmail.com>",
+  "author": "Yun HyeongJun <y37653@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -34,6 +34,6 @@
     "bottomSheetManager.js"
   ],
   "dependencies": {
-    "zindex-maximumvalue-manager": "1.0.2"
+    "zindex-maximumvalue-manager": "1.0.5"
   }
 }
