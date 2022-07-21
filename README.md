@@ -20,7 +20,7 @@ BottomSheet UI in Frontle
 }
 
 // at js file
-import {BottomSheet} from "../../frontle/browser_modules/frontle-bottomsheet/bottomSheet.js";
+import {BottomSheet} from "../../browser_modules/frontle-bottomsheet/bottomSheet.js";
 
 let bottomSheet = new BottomSheet(`
     <div>this is a bottomSheet<div>
