@@ -1,6 +1,6 @@
 {
   "name": "frontle-bottomsheet",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "BottomSheet UI in Frontle",
   "keywords": [
     "frontle",
@@ -34,6 +34,6 @@
     "bottomSheetManager.js"
   ],
   "dependencies": {
-    "zindex-maximumvalue-manager": "1.0.5"
+    "zindex-maximumvalue-manager": "2.0.0"
   }
 }

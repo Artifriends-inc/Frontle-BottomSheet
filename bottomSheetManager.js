@@ -3,18 +3,17 @@
 import {zIndexManager} from "../zindex-maximumvalue-manager/zIndexManager.js";
 
 export class BottomSheetManager {
-    static instance = null;
-    static getInstance() {
+    static _instance = null;
+    constructor() {
         const handler = document.querySelector('.rootPage').id;
 
-        if (this.instance === null) {
-            this.instance = new this();
-            this.instance.init(handler);
-        } else {
-            if(this.instance.handler !== handler) this.instance.init(handler);
+        if (BottomSheetManager._instance) {
+            if(BottomSheetManager._instance.handler !== handler) BottomSheetManager._instance.init(handler);
+            return BottomSheetManager._instance;
         }
 
-        return this.instance;
+        this.init(handler);
+        BottomSheetManager._instance = this;
     }
 
     zIndexManager = null;
@@ -26,10 +25,8 @@ export class BottomSheetManager {
 
     bottomSheet = [];
 
-    constructor() {}
-
     init(handler) {
-        this.zIndexManager = zIndexManager.getInstance();
+        this.zIndexManager = new zIndexManager();
         this.handler = handler;
         this.sheetCount = 0;
         this.bottomSheet = [];

@@ -33,7 +33,7 @@ export class BottomSheet {
         this.html = html;
 
         this.handler = document.querySelector('.rootPage').id;
-        this.sheetManager = BottomSheetManager.getInstance(this.handler);
+        this.sheetManager = new BottomSheetManager();
     }
 
     open() {
